@@ -65,7 +65,7 @@ func TestBucaAlunoPorCPFHandler(t *testing.T) {
 	defer DeletaAlunoMock()
 	r := SetupDasRotasDeTeste()
 	r.GET("/alunos/cpf/:cpf", controllers.BuscaAlunoPorCPF)
-	req, _ := http.NewRequest("GET", "/alunos/cpf/123456789011", nil)
+	req, _ := http.NewRequest("GET", "/alunos/cpf/12345678901", nil)
 	resposta := httptest.NewRecorder()
 	r.ServeHTTP(resposta, req)
 	assert.Equal(t, http.StatusOK, resposta.Code)
